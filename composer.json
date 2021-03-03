@@ -1,0 +1,17 @@
+{
+    "name": "ilyas/mvc-php",
+    "description": "mvc project",
+    "authors": [
+        {
+            "name": "Ilyas Yasin",
+            "email": "ilyas@mewahniagajaya.com"
+        }
+    ],
+    "require": {
+        "usmanhalalit/pixie": "^2.0",
+        "pecee/pixie": "^4.11",
+        "nilportugues/sql-query-builder": "^1.8",
+        "twig/twig": "^3.3",
+        "jenssegers/blade": "^1.4"
+    }
+}
