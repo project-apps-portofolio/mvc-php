@@ -39,7 +39,8 @@
                     <table id="tabel-data" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Last Name</th>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
                                 <th>Last Name</th>
                                 <th>Last Name</th>
                                 <th>Last Name</th>
@@ -62,6 +63,7 @@
                 'contentType': 'application/json'
             }).done(function(data) {
                 var result = data.data;
+                console.log(result)
                 $('#tabel-data').DataTable({
                     processing: true,
                     "aaData": result,
@@ -71,23 +73,25 @@
                             searchable: false
                         },
                         {
-                            "data": "id",
+                            "data": "customer.name",
                             orderable: false,
                             searchable: true
                         },
                         {
-                            "data": "id",
+                            "data": "tracking_number",
                             orderable: false,
                             searchable: true,
                             "render": function(data, type, row) {
-                                return '<span id="' + row.id + '">' + row.item_price + '</span>';
-                                // if (type === 'display') {
-                                //     return '<span id="' + data.ID + '">' + data.FullName + '</span>';
-                                // } else if (type === 'sort') {
-                                //     return data.LastName;
-                                // } else {
-                                //     return data;
-                                // }
+                                return '<span id="' + row.tracking_number + '">' + row.tracking_number + '</span>';
+                            }
+                        },
+                        {
+                            "data": "user.email",
+                            orderable: false,
+                            searchable: true,
+                            "render": function(data, type, row) {
+                                console.log(row.user.email);
+                                return '<span id="' + row.user.email + '">' + row.user.email + '</span>';
                             }
                         },
                         {
@@ -100,14 +104,9 @@
                         {
                             "data": "id",
                             "render": function(data, type, row) {
-                                return '<span id="' + row.id + '">' + row.item_price + '</span>';
-                                // if (type === 'display') {
-                                //     return '<span id="' + data.ID + '">' + data.FullName + '</span>';
-                                // } else if (type === 'sort') {
-                                //     return data.LastName;
-                                // } else {
-                                //     return data;
-                                // }
+                                return '<a href="#" class="btn btn-sm btn-primary">Show</a>\
+                                <a href="#" class="btn btn-sm btn-success">Edit</a>\
+                                <a href="#" class="btn btn-sm btn-danger">Delete</a>';
                             }
                         }
                     ],
