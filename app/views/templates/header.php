@@ -5,6 +5,9 @@
   <title></title>
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/bootstrap.css">
   <link rel="stylesheet" href="<?= BASEURL; ?>/css/custome.css">
+  <link rel="stylesheet" href="<?= BASEURL; ?>/css/placeholder-loading.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 </head>
 
 <body>
@@ -18,7 +21,6 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="<?= BASEURL; ?>/order">Order</a>
           <a class="nav-item nav-link" href="<?= BASEURL; ?>/category">Category</a>
-
         </div>
       </div>
     </div>
