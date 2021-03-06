@@ -1,3 +1,3 @@
 var globalUrl = {
-    baseUrl : 'http://localhost:9000/api/',
+    baseUrl : 'http://192.168.0.94:9000/api/',
 }

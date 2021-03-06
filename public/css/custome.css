@@ -136,3 +136,6 @@ footer {
   font-size: 0.75rem;
 }
 
+.pull-right {
+  padding-right: 0 !important;
+}

@@ -28,6 +28,19 @@
     </section>
 </main> -->
 <div class="container-fluid">
+    <div class="page-header">
+        <div class="pull-left">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?= BASEURL ?>/home">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="form-group">
+            <a class="btn btn-sm btn-primary" href="<?= BASEURL ?>/order/create">New Order</a>
+        </div>
+    </div>
     <div class="card-header">
         <h6>Logistik</h6>
     </div>
@@ -40,9 +53,9 @@
                         <thead>
                             <tr>
                                 <th>Order ID</th>
-                                <th>Customer Name</th>
-                                <th>Last Name</th>
-                                <th>Last Name</th>
+                                <!-- <th>Customer Name</th> -->
+                                <th>Tracking Number</th>
+                                <!-- <th>Email</th> -->
                                 <th>Last Name</th>
                                 <th>Action</th>
                             </tr>
@@ -72,11 +85,11 @@
                             orderable: false,
                             searchable: false
                         },
-                        {
-                            "data": "customer.name",
-                            orderable: false,
-                            searchable: true
-                        },
+                        // {
+                        //     "data": "customer.name",
+                        //     orderable: false,
+                        //     searchable: true
+                        // },
                         {
                             "data": "tracking_number",
                             orderable: false,
@@ -85,19 +98,26 @@
                                 return '<span id="' + row.tracking_number + '">' + row.tracking_number + '</span>';
                             }
                         },
-                        {
-                            "data": "user.email",
-                            orderable: false,
-                            searchable: true,
-                            "render": function(data, type, row) {
-                                console.log(row.user.email);
-                                return '<span id="' + row.user.email + '">' + row.user.email + '</span>';
-                            }
-                        },
+                        // {
+                        //     "data": "user.email",
+                        //     orderable: false,
+                        //     searchable: true,
+                        //     "render": function(data, type, row) {
+                        //         console.log(row.user.email);
+                        //         return '<span id="' + row.user.email + '">' + row.user.email + '</span>';
+                        //     }
+                        // },
                         {
                             "data": "created_at",
                             render: function(d) {
-                                return moment(d).format("dddd, DD-MM-YYYY");
+                                console.log(d);
+                                if (d == null) {
+                                    e = moment().format()
+                                } else {
+                                    e = d
+                                }
+                                // console.log( moment().format());
+                                return moment(e).format("dddd, DD-MM-YYYY");
                             },
                             width: '9%'
                         },

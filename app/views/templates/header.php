@@ -12,7 +12,9 @@
   <script src="<?= BASEURL; ?>/global/url.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
-  
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" integrity="sha512-kq3FES+RuuGoBW3a9R2ELYKRywUEQv0wvPTItv3DSGqjpbNtGWVdvT8qwdKkqvPzT93jp8tSF4+oN4IeTEIlQA==" crossorigin="anonymous" />
 </head>
 <?php
 
@@ -37,7 +39,7 @@ $menu = array(
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <?php for($i=0; $i < count($menu); $i++) { ?>
-          <a class="nav-item nav-link" href="<?= BASEURL; $menu[$i]['link']; ?>"><?= $menu[$i]['menu_name']; ?></a>
+          <a class="nav-item nav-link" href="<?= BASEURL;?>/order"><?= $menu[$i]['menu_name']; ?></a>
           <!-- <a class="nav-item nav-link" href="<?= BASEURL; ?>/category">Category</a> -->
           <?php } ?>
         </div>

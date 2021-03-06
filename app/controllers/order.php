@@ -33,20 +33,24 @@ class Order extends Controller
         $this->view('/templates/footer');
     }
 
-    public function order_detail() {
+    public function order_detail()
+    {
 
         $this->view('/templates/header');
         $this->view('/order/order_detail');
         $this->view('/templates/footer');
     }
 
-    public function order_data() {
-        
-    }
-
-    public function index_data() {
+    public function index_data()
+    {
         $data['order'] = $this->modelOrder;
         header('Content-Type: application/json');
         echo json_encode($data);
+    }
+
+    public function create() {
+        $this->view('/templates/header');
+        $this->view('/order/create');
+        $this->view('/templates/footer');
     }
 }
