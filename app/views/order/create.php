@@ -3,10 +3,10 @@
         <div class="page-header">
             <div class="row">
                 <div class="col">
-                    <h4 class="one">Text</h4>
+                    <h4 class="one">Order</h4>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-primary btn-sm pull-left">Button</button>
+                    <button href="<?= BASEURL ?>/order/create" class="btn btn-primary btn-sm pull-left">Create Order</button>
                 </div>
             </div>
         </div>
@@ -121,6 +121,7 @@
     $(document).ready(function() {
 
         document.getElementById('tracking_number').value = (Math.floor(Date.now() * 100));
+
         $(".select2-category-id").select2({
             theme: "bootstrap",
             width: 'resolve',
@@ -131,13 +132,23 @@
                 dataType: 'JSON',
                 type: "POST",
                 quietMillis: 50,
-                processResults: function(data, page) {
-                    return {
-                        results: data
-                    };
-                }
+
+                // data: function(params) {
+                //     var query = {
+                //         search: params.term,
+                //     }
+                //     return query;
+                // },
+                // processResults: function(data, page) {
+                //     return {
+                //         results: data
+                //     };
+                // },
             }
-        });
+        }).on('select2:select', function (evt) {
+        //  var data = $(".select2 option:selected").text();
+        //  alert("Data yang dipilih adalah "+data);
+      });
 
         $(".select2-user-id").select2({
             theme: "bootstrap",
@@ -149,11 +160,11 @@
                 dataType: 'JSON',
                 type: "POST",
                 quietMillis: 50,
-                processResults: function(data, page) {
-                    return {
-                        results: data
-                    };
-                }
+                // processResults: function(data, page) {
+                //     return {
+                //         results: data
+                //     };
+                // }
             }
         });
 
@@ -167,11 +178,11 @@
                 dataType: 'JSON',
                 type: "POST",
                 quietMillis: 50,
-                processResults: function(data, page) {
-                    return {
-                        results: data
-                    };
-                }
+                // processResults: function(data, page) {
+                //     return {
+                //         results: data
+                //     };
+                // }
             }
         });
 
